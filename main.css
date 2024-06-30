@@ -1,0 +1,31 @@
+
+.post-ratings-container {
+	display: flex;
+	justify-content: center;
+	padding: 12px 6px;
+}
+
+.post-rating {
+	display: flex;
+	align-items: center;
+	cursor: default;
+}
+
+.post-rating:not(:last-child) {
+	margin-right: 12px;
+}
+
+.post-rating-selected > .post-rating-button,
+.post-rating-selected > .post-rating-count {
+	color: #4CAF50;
+}
+
+.post-rating-button {
+	margin-right: 6px;
+	cursor: pointer;
+	color: #555555;
+}
+
+.post-rating:not(.post-rating-selected) > .post-rating-button:hover {
+	color: #000000;
+}
