@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Booking Form</title>
     <!-- font awesome cdn  -->
   <script src="https://kit.fontawesome.com/46b7ceee20.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -20,217 +20,153 @@
     <link rel="stylesheet" href="site.css">
 
 
-<style>
-		.share-button {
-			background-color: #4CAF50;
-			color: white;
-			border: none;
-			padding: 10px;
-			border-radius: 14px;
-			cursor: pointer;
-			display: inline-block;
-			margin-bottom: 10px;
-			margin-left: 10%;
-			margin-top: 12px;
-		}
+		<style>
+	    .container {
+	      width: 80%;
+	      margin: 0 auto;
+	      background-color: transparent;
+	      border-radius: 14px;
+	      padding-bottom: 10px;
+	    }
 
-		.social-platforms {
-			display: none;
-		}
+	    label {
+	      display: block;
+	      margin-top: 10px;
+	    }
 
-		.social-platforms.show {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-top: 10px;
-			padding-bottom: 10px;
-			margin-right: 5px;
-		}
+	    input[type="text"],
+	    textarea {
+	      width: 100%;
+	      padding: 5px;
+	      border: 1px solid #ccc;
+	      border-radius: 4px;
+	      box-sizing: border-box;
+	    }
 
-		.social-platforms a {
-			margin: 8px;
-			color: white;
-			font-size: 30px;
-		}
-	</style>
+	        button {
+	      margin-top: 10px;
+	      padding: 10px 20px;
+	      background-color: #4CAF50;
+	      color: #fff;
+	      cursor: pointer;
+	    }
 
 
 
+	  </style>
+	  <script>
+	    function sendBookingDetails() {
+	      // Get the input values
+	      var clientName = document.getElementById('client-name').value;
+	      var contactNumber = document.getElementById('contact-number').value;
+	      var emailAddress = document.getElementById('email-address').value;
+	      var durationStay = document.getElementById('duration-perstay').value;
+	      var bookingType = document.getElementById('booking-type').value;
+	      var eventDescription = document.getElementById('event-description').value;
+	      var eventDate = document.getElementById('event-date').value;
 
-</head>
-<body>
-    <!-- home page  -->
-    <div style="hight: 100%; width: 80%; align-self: center; margin-left: 10%;">
-        <!-- header section  -->
-        <div class="header-section">
-            <!-- header logo  -->
-            <div class="logo">
-                <img src="Images/Tsheryl's BnB Logo.png" style="width: 250px; height: auto; margin-bottom: 20px; border-radius: 9px; margin-top: 10px; margin-bottom: 20px;" alt="">
-            </div>
+	      // Compose the message
+	      var message = "Client Name: " + clientName + "\n"
+	            + "Contact Number: " + contactNumber + "\n"
+	            + "Email Address: " + emailAddress + "\n"
+	            + "Druation Perstay: " + durationStay + "\n"
+	            + "Booking Type: " + bookingType + "\n"
+	            + "Service/Event Name & Description: " + eventDescription + "\n"
+	            + "Event Date: " + eventDate;
 
-            <!-- header navigation  -->
-            <div class="header-nav">
-                <div class="mobile-nav-bar">
-                    <i class="fa-solid fa-bars" id="mobile-nav-bar-icon"></i>
-                </div>
-                <ul class="header-nav-list" id="header-nav-list">
+	      // Send via email
+	      var emailLink = "mailto:normusasasasa@gmail.com?subject=Booking Request&body=" + encodeURIComponent(message);
 
+	      // Send via WhatsApp
+	      var whatsappLink = "https://wa.me/0827805266/?text=" + encodeURIComponent(message);
 
-                	<li class="header-nav-tab">
-                        <a href="pay1.html" >Booking Form</a>
-                    </li >
-
-                	<li class="header-nav-tab">
-                        <a href="index.html" >Home</a>
-                    </li >
-
-										<li class="header-nav-tab">
-                        <a href="services.html">Bookings</a>
-                    </li>
-
-										<li class="header-nav-tab">
-	                        <a href="gallery.html" >Gallery</a>
-	                    </li >
-
-                    <li class="header-nav-tab">
-                        <a href="contact.html" >Contacts Us</a>
-                    </li >
-
-                    <span class="highlight"></span>
-                </ul>
-
-                <div style="margin-left: 16px;" class="mode-change">
-                    <i class="fa-solid fa-moon" id="mode-change"></i>
-                </div>
-            </div>
-        </div>
-        <!-- hero section  -->
-        <div class="hero-section">
-            <!-- hero content section  -->
-            <div class="hero-content">
-                <div class="content-header">
-                    <h1 style="background-color: transparent;">Bookings</h1>
-                   </p>
-                </div>
-
-            </div>
+	      // Choose the platform based on user selection
+	      var platform = document.getElementById('platform').value;
+	      if (platform === 'email') {
+	        window.location.href = emailLink;
+	      } else if (platform === 'whatsapp') {
+	        window.open(whatsappLink, '_blank');
+	      }
+	    }
+	  </script>
+	</head>
+	<body>
 
 
 
-				<!-- About details -->
-				<style>
-				    .container {
-				      width: 400px;
-				      margin: 0 auto;
-				      background-color: white;
-				      border-radius: 14px;
-				      padding-bottom: 10px;
-				    }
+	    <!-- home page  -->
+	    <div class="home-page">
+	        <!-- header section  -->
+	        <div class="header-section">
+	            <!-- header logo  -->
+	            <div class="logo">
+	                <img src="Images/Tsheryl's BnB Logo.png" style="width: 150px; height: auto; margin-bottom: 20px; border-radius: 9px" alt="">
+	            </div>
 
-				    label {
-				      display: block;
-				      margin-top: 10px;
-				    }
-
-				    input[type="text"],
-				    textarea {
-				      width: 100%;
-				      padding: 5px;
-				      border: 1px solid #ccc;
-				      border-radius: 4px;
-				      box-sizing: border-box;
-				    }
-
-				        button {
-				      margin-top: 10px;
-				      padding: 10px 20px;
-				      background-color: #4CAF50;
-				      color: #fff;
-				      cursor: pointer;
-				    }
+	            <!-- header navigation  -->
+	            <div class="header-nav">
+	                <div class="mobile-nav-bar">
+	                    <i class="fa-solid fa-bars" id="mobile-nav-bar-icon"></i>
+	                </div>
+	                <ul class="header-nav-list" id="header-nav-list">
+	                   <li class="header-nav-tab ">
+	                        <a href="index.html">Home</a>
+	                    </li>
 
 
 
-				  </style>
-				  <script>
-				    function sendBookingDetails() {
-				      // Get the input values
-				      var clientName = document.getElementById('client-name').value;
-				      var contactNumber = document.getElementById('contact-number').value;
-				      var emailAddress = document.getElementById('email-address').value;
-				      var eventDescription = document.getElementById('event-description').value;
-				      var eventDate = document.getElementById('event-date').value;
-
-				      // Compose the message
-				      var message = "Client Name: " + clientName + "\n"
-				            + "Contact Number: " + contactNumber + "\n"
-				            + "Email Address: " + emailAddress + "\n"
-				            + "Service/Event Name & Description: " + eventDescription + "\n"
-				            + "Event Date: " + eventDate;
-
-				      // Send via email
-				      var emailLink = "mailto:fisokuhlecollege@gmail.com?subject=Booking Request&body=" + encodeURIComponent(message);
-
-				      // Send via WhatsApp
-				      var whatsappLink = "https://wa.me/0826459088/?text=" + encodeURIComponent(message);
-
-				      // Choose the platform based on user selection
-				      var platform = document.getElementById('platform').value;
-				      if (platform === 'email') {
-				        window.location.href = emailLink;
-				      } else if (platform === 'whatsapp') {
-				        window.open(whatsappLink, '_blank');
-				      }
-				    }
-				  </script>
-				</head>
-				<body>
-
-
-				  <div class="wrapper">
-				    <div class="page">
-				  <div class="cover" style="height: auto; width: auto; background-color: transparent; border-radius: 95px; margin-top: 20px;">
-				    </div>
-
-				      <button style="border-radius: 15px; border-color: transparent;" onclick="window.location.href='index.html';">
-				          <i class="fa-solid fa-house"></i>Home
-				        </button>
-				      </div>
+	                    <span class="highlight"></span>
+	                </ul>
+	                <div class="mode-change">
+	                    <i class="fa-solid fa-moon" id="mode-change"></i>
+	                </div>
+	            </div>
+	        </div>
+	</div>
 
 
 
 
-				<div class="selection-links" style="align-items: center;">
-				  <div class="link new-link" style="text-align: center;">
-				<div class="items" style="text-align: center;">
+	<div class="selection-links" style="align-items: center;">
+	  <div class="link new-link" style="text-align: center;">
+	<div class="items" style="text-align: center;">
 
 
 
-				   <div class="container">
-				    <h2>How can we assist you..?</h2>
-				    <label for="event-name">Name:</label>
-				    <input type="text" id="client-name">
+	   <div class="container">
+	    <h2>Request To Book</h2>
+	    <label for="client-name">Name:</label>
+	    <input type="text" id="client-name">
 
-				    <label for="contact-number">Contact number:</label>
-				    <input type="text" id="contact-number">
+	    <label for="contact-number">Contact number:</label>
+	    <input type="text" id="contact-number">
 
-				    <label for="email-address">E-mail Address:</label>
-				    <input type="text" id="email-address">
+	    <label for="email-address">E-mail Address:</label>
+	    <input type="text" id="email-address">
 
-				    <label for="event-description">What is the Event or Ceremony you need catering for, & estimated number of guests or people:</label>
-				    <textarea id="event-description"></textarea>
+	    <label for="duration-perstay">Duration Per-stay:</label>
+	    <input type="text" id="book-tittle">
 
-				    <label for="event-date">Date:</label>
-				    <input type="text" id="event-date">
+	    <label for="booking-type">Select Booking Type:</label>
+	      <select id="package-type">
+	      <option value="Whole House">Whole House Booking</option>
+	      <option value="Per Room">Booking A Room</option>
+	      </select>
 
-				    <label for="platform">Send via:</label>
-				    <select id="platform">
-				      <option value="email">Email</option>
-				      <option value="whatsapp">WhatsApp</option>
-				    </select>
+	    <label for="event-description">Description:</label>
+	    <textarea id="event-description"></textarea>
 
-				    <button style="border-radius: 15px; border-color: transparent;" onclick="sendBookingDetails()"><i class="fa-solid fa-paper-plane"></i></button>
-				  </div>
+	    <label for="event-date">Date:</label>
+	    <input type="text" id="event-date">
+
+	    <label for="platform">Send via:</label>
+	    <select id="platform">
+	      <option value="email">Email</option>
+	      <option value="whatsapp">WhatsApp</option>
+	    </select>
+
+	    <button style="border-radius: 15px; border-color: transparent;" onclick="sendBookingDetails()"><i class="fa-solid fa-paper-plane"></i></button>
+	  </div>
 
 
 			 </div>
@@ -270,7 +206,7 @@
  		            </div>
  		            <div>
  		                <i class="fa fa-envelope"></i>
- 		                <p style="background-color: transparent;"><a href="mailto:normusasasasa@gmail.com">normusasasasae@gmail.com</a></p>
+ 		                <p style="background-color: transparent;"><a href="mailto:normusasasasa@gmail.com">normusasasasa@gmail.com</a></p>
  		            </div>
  		        </div>
  		        <div class="footer-right">
