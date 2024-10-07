@@ -321,7 +321,7 @@ a{
         height: 65%;
         width: 80%;
         border-radius: 20px;
-        background-color: white;
+        background-color: #4CAF50;
         box-shadow: 3px 3px 10px var(--secondaryColor);
         flex-direction: column;
         justify-content: space-around;
