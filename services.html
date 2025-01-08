@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="x-icon" href="Images/Tsheryl's BnB Logo.png">
+		<link rel="shortcut icon" type="x-icon" href="Images/Tsheryl's BnB Logo.png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookings</title>
-
-    <!-- custom css  -->
-    <link rel="stylesheet" href="site.css" />
-    <link rel="stylesheet" href="main.css" />
-
-        <!-- font awesome cdn  -->
+    <title>Tsheryl's BnB</title>
+    <!-- font awesome cdn  -->
   <script src="https://kit.fontawesome.com/46b7ceee20.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
   integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -21,49 +16,73 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
+    <!-- custom css  -->
+    <link rel="stylesheet" href="site.css">
 
 
 <style>
-    .share-button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 14px;
-      cursor: pointer;
-      display: inline-block;
-      margin-bottom: 10px;
-      margin-left: 0%;
-      margin-top: 12px;
-    }
+		.share-button {
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			padding: 10px;
+			border-radius: 14px;
+			cursor: pointer;
+			display: inline-block;
+			margin-bottom: 10px;
+			margin-left: 10%;
+			margin-top: 12px;
+		}
 
-    .social-platforms {
-      display: none;
-    }
+		.social-platforms {
+			display: none;
+		}
 
-    .social-platforms.show {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-      padding-bottom: 10px;
-      margin-right: 5px;
-    }
+		.social-platforms.show {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 10px;
+			padding-bottom: 10px;
+			margin-right: 5px;
+		}
 
-    .social-platforms a {
-      margin: 8px;
-      color: white;
-      font-size: 30px;
-    }
-  </style>
+		.social-platforms a {
+			margin: 8px;
+			color: blue;
+			font-size: 30px;
+		}
+	</style>
+	<script>
+		function showSocialPlatforms() {
+			const socialPlatforms = document.querySelector('.social-platforms');
+			socialPlatforms.classList.toggle('show');
+		}
 
+		function shareLink(platform) {
+			var linkToShare = "https://esifisosethucreation.co.za/index.html"; // Replace with your link to share
+			var socialUrl;
+
+			if (platform === 'facebook') {
+				socialUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(linkToShare);
+			} else if (platform === 'instagram') {
+				socialUrl = 'https://www.instagram.com/share?url=' + encodeURIComponent(linkToShare);
+			} else if (platform === 'email') {
+				socialUrl = 'mailto:?body=' + encodeURIComponent(linkToShare);
+			} else if (platform === 'whatsapp') {
+				socialUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(linkToShare);
+			}
+
+			window.open(socialUrl, '_blank');
+		}
+	</script>
 
 
 
 </head>
 <body>
     <!-- home page  -->
-    <div style="hight: 100%; width: 80%; align-self: center; margin-left: 10%;">
+    <div class="home-page">
         <!-- header section  -->
         <div class="header-section">
             <!-- header logo  -->
@@ -78,142 +97,286 @@
                 </div>
                 <ul class="header-nav-list" id="header-nav-list">
 
-
-                  <li class="header-nav-tab">
-                      <a href="services.html">Bookings</a>
-                  </li>
                     <li class="header-nav-tab">
                         <a href="index.html" >Home</a>
                     </li >
                     <li class="header-nav-tab">
-                        <a href="about.html" >About Us</a>
-                    </li >
-                    <li class="header-nav-tab">
+                        <a href="about.html">About Us</a>
+                    </li>
+										<li class="header-nav-tab">
+                        <a href="services.html">Bookings</a>
+                    </li>
+										<li class="header-nav-tab">
 	                        <a href="https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html" >Gallery</a>
 	                    </li >
                     <li class="header-nav-tab">
                         <a href="contact.html" >Contacts Us</a>
                     </li >
+
                     <span class="highlight"></span>
                 </ul>
-                <div style="margin-left: 16px; color: transparent;" class="mode-change">
+								<div style="margin-left: 16px; color: transparent;" class="mode-change">
                     <i class="fa-solid fa-moon" id="mode-change"></i>
                 </div>
 
 
             </div>
         </div>
+        <!-- hero section  -->
+        <div class="hero-section"  style="margin-bottom: 5px; background-color: white; border-radius: 10px">
+            <!-- hero content section  -->
+            <div class="hero-content">
+                <div class="content-header">
+                    <h1 style="background-color: white; border-radius: 10px;">TSHERYL's BnB<br> Home Away From Home!</h1>
+                    <p style="background-color: white; border-radius: 10px; margin-left: 10px;">For all Military personel to book for Meetings | Conferences | Temporal Accomodations & more.
+                    	</p>
 
 
-      <div class="selection-links" style="align-items: center;">
-  <div class="link new-link" style="text-align: center;">
-<div class="items" style="text-align: center;">
+											<div>
+											<img src="Images/BnB-IMG (59).jpg" alt="">
+											</div>
+
+<div style="background-color: red;" class="share-button" onclick="window.location.href='services.html';"><i class="fas fa-order"></i>Book Now</div>
+
+<div style="margin-left: 6px" class="share-button" onclick="showSocialPlatforms()"><i class="fas fa-share"></i>Share</div>
 
 
 <!-- Insert site/plug sharing links -->
-
-<div class="gallaries" style="text-align: center; background-color: white; border-radius: 10px;">
-
-
-<!-- Insert site owner's products/merchendise/clothing -->
-
-
-<div style="max-width: 800px; margin: 0 auto; text-align: center;">
-  <h2 style="font-size: 24px; color: #333;margin-bottom: 30px;">Make Bookings For Your Accomodation Needs</h2>
-
-
-  <div style="border: 1px solid #ccc; border-radius: 15px; margin-bottom: 20px; padding: 20px;">
-      <div style="margin-bottom: 20px;">
-          <h3 style="font-size: 20px; color: black;">Whole House Booking</h3>
-          <p style="font-size: 18px; color: black;">First check if the number of rooms you require are available, then book by each for the intended stay.</p>
-          <p style="font-size: 18px; color: #333;">Click Make Booking To See Pricing Per Night</p>
-          <ul style="list-style-type: none; padding: 0;">
-              <li style="font-size: 16px; color: #555;">Suitable for Short-term Accomodation, Small Meetings, Gatherings, & Celebrations/Parties<br></li>
-          </ul>
-          <button onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';" style="background-color:  black;; color: #fff; padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer;">Make Booking</button>
-      </div>
-
-      <div style="border: 1px solid #ccc; border-radius: 15px; margin-bottom: 20px; padding: 20px;">
-          <div style="margin-bottom: 20px;">
-              <h3 style="font-size: 20px; color:  black;;">Per Room Booking</h3>
-              <p style="font-size: 18px; color: #333;">Click Make Booking To See Pricing Per Night</p>
-              <ul style="list-style-type: none; padding: 0;">
-                  <li style="font-size: 16px; color: #555;">Suitable for Short-term Accomodation, Small Meetings, Gatherings, & Celebrations/Parties<br></li>
-              </ul>
-              <button onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';" style="background-color:  black;; color: #fff; padding: 10px 20px; border: none; border-radius: 10px; cursor: pointer;">Make Booking</button>
-          </div>
-
-
-  </div>
-</div>
-
-
-
- </div>
+    <div class="social-platforms">
+        <a href="https://tsherylsbnb.co.za/index.html" onclick="shareLink('facebook')"><i class="fab fa-facebook" style="color: blue; font-size: 70px;"></i></a>
+        <a href="https://tsherylsbnb.co.za/index.html" onclick="shareLink('instagram')"><i class="fab fa-instagram" style="color: purple; font-size: 70px;"></i></a>
+        <a href="https://tsherylsbnb.co.za/index.html" onclick="shareLink('email')"><i class="fas fa-envelope" style="color: red; font-size: 70px;"></i></a>
+        <a href="https://tsherylsbnb.co.za/index.html" onclick="shareLink('whatsapp')"><i class="fab fa-whatsapp" style="color: green; font-size: 70px;"></i></a>
     </div>
 
+		<h1 style="background-color: white; background-color: white; border-radius: 10px;">About The Property</h1>
+		<p style="background-color: white; margin-left: 10px;">
 
-    <div class="gallaries" style="text-align: center; background-color: white; border-radius: 10px;">
-      <h1>Book By A Call</h1>
-        <h3>Please Call Us!</h3>
-        <div class="buttons">
-         <button onclick="window.location.href='phone=0826459088';" style="border: none; color: black; background-color: white;">
-      <i class="fa-solid fa-phone" style="font-size: 40px; padding: 9px;"></i></button>
+
+
+Closeby to most of the major Army & Navy Headquarters in Pretoria!
+<br>
+Military Hospital = 10km
+<br>
+SAMHS Kasteel Park = 13km
+<br>
+Waterkloof Airport = 14km
+<br>
+Chief Joint Operations = 4.5km
+<br>
+Military Ombudsman = 4.7km
+<br>
+Institude for Aviation Medicine = 4.7km
+<br>
+Navy HQ = 19km
+<br>
+Army HQ = 19km
+<br><br>
+Nestled in a very safe and tranquil neighborhood, this stunning property offers both comfort and luxury. The main house is a spacious two-story, 5-bedroom haven designed for family living and entertaining.
+
+On the ground floor, you'll find three inviting bedrooms, two of which share a well-appointed bathroom, while the third features a private en-suite bathroom. The top floor boasts two additional bedrooms that share a bathroom, along with an extra toilet for added convenience.
+
+The heart of the home is its open-plan living area, where natural light floods in from multiple angles, creating a warm and welcoming atmosphere. The living room flows seamlessly into a charming dining area adorned with vintage furnishings, perfect for family meals and gatherings.
+
+The open kitchen is a chef’s delight, offering ample movement space and modern amenities to make cooking a pleasure. Step out onto the top floor balcony to enjoy fresh air and catch the mesmerizing sunrises and sunsets that Pretoria is known for.
+
+In addition to the main house, there is a separate double room outside with its own kitchen and bathroom, ideal for guests or extended family.
+
+Parking is a breeze with a two-car garage and additional parking spaces available.
+
+This property is not just a house; it’s a place to call home. Come and experience the perfect blend of comfort, style, and convenience. Your new home away from home awaits!
+			</p>
+
+		<h2 style="background-color: white; margin-left: 10px; background-color: white; border-radius: 10px;">Most popular facilities</h1>
+			<p style="background-color: white; margin-left: 10px;">
+				Swimming Pool
+				|
+				Free WiFi
+				|
+				Free parking
+				|
+				Breakfast
+			</p>
+
+		<div class="card-list" style="background: #ecececdb;">
+
+
+		        <a href="#" class="card-item">
+		            <img style="margin-left: -6px;" src="Images/BnB-IMG (7).jpg" alt="Card Image">
+		            <span class="designer">Bedroom One (Main-House Ground Floor)</span>
+		            <p style="color: black;">Has lots of useful space, cozy, with natural light coming in from different angles, & has everything a master bedroom should have.</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+      		                <i class="fas fa-arrow-right card-icon"></i>
+      		      </div>
+		        </a>
+						<a href="#" class="card-item">
+		            <img style="margin-left: -6px;" src="Images/BnB-IMG (15).jpg" alt="Card Image">
+		            <span class="designer">Bedroom Two (Main-House Ground Floor)</span>
+		            <p style="color: black;">Has lots of useful space, cozy, with natural light coming in from different angles, & has everything a master bedroom should have.</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+      		                <i class="fas fa-arrow-right card-icon"></i>
+      		      </div>
+		        </a>
+						<a href="#" class="card-item">
+		            <img style="margin-left: -6px;" src="Images/BnB-IMG (18).jpg" alt="Card Image">
+		            <span class="designer">Bedroom Three (Main-House Ground Floor)</span>
+		            <p style="color: black;">Has lots of useful space, cozy, with natural light coming in from different angles, & has everything a master bedroom should have.</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+ 												 <i class="fas fa-arrow-right card-icon"></i>
+ 							 </div>
+		        </a>
+						<a href="#" class="card-item">
+		            <img style="margin-left: -6px;" src="Images/BnB-IMG (42).jpg" alt="Card Image">
+		            <span class="designer">Bedroom Four (Main-House Top Floor)</span>
+		            <p style="color: black;">Has lots of useful space, cozy, with natural light coming in from different angles, & has everything a master bedroom should have.</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+      		                <i class="fas fa-arrow-right card-icon"></i>
+      		      </div>
+		        </a>
+						<a href="#" class="card-item">
+		            <img style="margin-left: -6px;" src="Images/BnB-IMG (65).jpg" alt="Card Image">
+		            <span class="designer">Bedroom Five (Main-House Top Floor)</span>
+		            <p style="color: black;">Has lots of useful space, cozy, with natural light coming in from the large window.</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+      		                <i class="fas fa-arrow-right card-icon"></i>
+      		      </div>
+		        </a>
+						<a href="#" class="card-item">
+								<img style="margin-left: -6px;" src="Images/BnB-IMG (80).jpg" alt="Card Image">
+								<span class="designer">Bedroom Six (Outside Main-House)</span>
+								<p style="color: black;">Has its own Kitchen, Refregerator, and ensuite Bathroom with a Shower, lots of useful space, cozy, with natural light coming in from different angles.</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+												 <i class="fas fa-arrow-right card-icon"></i>
+							 </div>
+						</a>
+						<a href="#" class="card-item">
+							 <img style="margin-left: -6px;" src="Images/BnB-IMG (21).jpg" alt="Card Image">
+							 <span class="developer">The Living Room</span>
+							 <p style="color: black;">Amazing space with natural light, awesome atmosphere & relaxing</p>
+							 <div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+												 <i class="fas fa-arrow-right card-icon"></i>
+							 </div>
+					 </a>
+		        <a href="#" class="card-item">
+		            <img style="margin-left: -6px;" src="Images/BnB-IMG (22).jpg" alt="Card Image">
+		            <span class="editor">The Kitchen</span>
+		            <p style="color: black;">This Kitchen is where the magic happens, so there had to be lots of useful moving space, great atmosphere that'll make you feel like a chef.</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+      		                <i class="fas fa-arrow-right card-icon"></i>
+      		      </div>
+		        </a>
+						<a href="#" class="card-item">
+		            <img style="margin-left: -6px;" src="Images/BnB-IMG (20).jpg" alt="Card Image">
+		            <span class="developer">The Dining Room</span>
+		            <p style="color: black;">With amaizing vintage furnishing.</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+      		                <i class="fas fa-arrow-right card-icon"></i>
+      		      </div>
+		        </a>
+						<a href="#" class="card-item">
+		            <img style="margin-left: -6px;" src="Images/BnB-IMG (11).jpg" alt="Card Image">
+		            <span class="editor">The Bathrooms</span>
+		            <p style="color: black;">Consists of a tub and shower, the loo, and lots of useful space.</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+      		                <i class="fas fa-arrow-right card-icon"></i>
+      		      </div>
+		        </a>
+						<a href="#" class="card-item">
+		            <img style="margin-left: -6px;" src="Images/BnB-IMG (4).jpg" alt="Card Image">
+		            <span class="developer">The Garage</span>
+		            <p style="color: black;">Is a two car garage space.</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+      		                <i class="fas fa-arrow-right card-icon"></i>
+      		      </div>
+		        </a>
+						<a href="#" class="card-item">
+		            <img style="margin-left: -6px;" src="Images/BnB-IMG (10).jpg" alt="Card Image">
+		            <span class="developer">The Outdoor Balcony</span>
+		            <p style="color: black;">Amazing and very relaxing space with an awesome view</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+      		                <i class="fas fa-arrow-right card-icon"></i>
+      		      </div>
+		        </a>
+						<a href="#" class="card-item">
+		            <img style="margin-left: -6px;" src="Images/BnB-IMG (54).jpg" alt="Card Image">
+		            <span class="developer">The Outdoor Pool</span>
+		            <p style="color: black;">Amazing and very relaxing pool</p>
+								<div class="arrow" onclick="window.location.href='https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html';">
+      		                <i class="fas fa-arrow-right card-icon"></i>
+      		      </div>
+		        </a>
+		    </div>
+
+				<div style="background-color: red;" class="share-button" onclick="window.location.href='services.html';"><i class="fas fa-order"></i>Book Now</div>
+
+				<div style="margin-left: 6px" class="share-button" onclick="showSocialPlatforms()"><i class="fas fa-share"></i>Share</div>
+
+
+				<!-- Insert site/plug sharing links -->
+				    <div class="social-platforms">
+				        <a href="https://tsherylsbnb.co.za/index.html" onclick="shareLink('facebook')"><i class="fab fa-facebook" style="color: blue; font-size: 70px;"></i></a>
+				        <a href="https://tsherylsbnb.co.za/index.html" onclick="shareLink('instagram')"><i class="fab fa-instagram" style="color: purple; font-size: 70px;"></i></a>
+				        <a href="https://tsherylsbnb.co.za/index.html" onclick="shareLink('email')"><i class="fas fa-envelope" style="color: red; font-size: 70px;"></i></a>
+				        <a href="https://tsherylsbnb.co.za/index.html" onclick="shareLink('whatsapp')"><i class="fab fa-whatsapp" style="color: green; font-size: 70px;"></i></a>
+				    </div>
+
+
+
+
+
+
+
+	<footer>
+<div class="outer-footer">
+  <div class="widget links">
+                    <ul class="style2">
+                       <li><a href="https://www.termsfeed.com/live/1ab1c651-5b25-43e4-8812-d7e8658a1dd3" style="color: black;">Privacy Policy</a></li>
+                      <li><a href="https://www.termsfeed.com/live/07228ddf-8948-43c8-8992-679d5a7536e2" style="color: black;">terms</a></li>
+                    </ul>
+                  </div>
+<footer class="footer-distributed">
+
+        <div class="footer-left">
+            <h3 style="background-color: transparent;">Tsheryl's BnB</span></h3>
+
+            <p style="background-color: transparent;" class="footer-links">
+                <a href="index.html">Home</a>
+                |
+                <a href="https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html">Bookings</a>
+                |
+                <a href="contact.html">Contact Us</a>
+            </p>
+
+            <p style="background-color: transparent;" class="footer-company-name">Copyright © 2024 Tsheryl's BnB. Website by  <strong><a href="https://www.blossomvelder.co.za/">Blossom Velder (pty) Ltd</a>.</strong> All rights reserved</p>
         </div>
-       </div>
 
+        <div  style="background-color: transparent;" class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p style="background-color: transparent;"><span>House no. 97<br>Dadelboom Street<br>Ext 04, Zwartkop, Centurion<br>Pretoria<br>0157</p>
+            </div>
 
-       <footer>
-     <div class="outer-footer">
-       <div class="widget links">
-                         <ul class="style2">
-                            <li><a href="https://www.termsfeed.com/live/1ab1c651-5b25-43e4-8812-d7e8658a1dd3" style="color: black;">Privacy Policy</a></li>
-                           <li><a href="https://www.termsfeed.com/live/07228ddf-8948-43c8-8992-679d5a7536e2" style="color: black;">terms</a></li>
-                         </ul>
-                       </div>
-     <footer class="footer-distributed">
+            <div>
+                <i class="fa fa-phone"></i>
+                <p style="background-color: transparent;">075 240 3765<br>079 325 9304<br>081 837 1237</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p style="background-color: transparent;"><a href="mailto:nkememekaabonta17@gmail.com">tsherylsbnb@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p style="background-color: transparent;" class="footer-company-about">
+                <span>About Us</span>
+                <strong>Tsheryl's BnB</strong> Your home away from home. We are a place to first think of when you need a place to stay for a while in Pretoria.
+            </p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/Tsherylsbnb?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
 
-             <div class="footer-left">
-                 <h3 style="background-color: transparent;">Tsheryl's BnB</span></h3>
-
-                 <p style="background-color: transparent;" class="footer-links">
-                     <a href="index.html">Home</a>
-                     |
-                     <a href="https://www.booking.com/hotel/za/tsheryls-bnb.en-gb.html">Bookings</a>
-                     |
-                     <a href="contact.html">Contact Us</a>
-                 </p>
-
-                 <p style="background-color: transparent;" class="footer-company-name">Copyright © 2024 Tsheryl's BnB. Website by  <strong><a href="https://www.blossomvelder.co.za/">Blossom Velder (pty) Ltd</a>.</strong> All rights reserved</p>
-             </div>
-
-             <div  style="background-color: transparent;" class="footer-center">
-                 <div>
-                     <i class="fa fa-map-marker"></i>
-                     <p style="background-color: transparent;"><span>House no. 97<br>Dadelboom Street<br>Ext 04, Zwartkop, Centurion<br>Pretoria<br>0157</p>
-                 </div>
-
-                 <div>
-                     <i class="fa fa-phone"></i>
-                     <p style="background-color: transparent;">082 780 5266</p>
-                 </div>
-                 <div>
-                     <i class="fa fa-envelope"></i>
-                     <p style="background-color: transparent;"><a href="mailto:normusasasasa@gmail.com">normusasasasa@gmail.com</a></p>
-                 </div>
-             </div>
-             <div class="footer-right">
-                 <p style="background-color: transparent;" class="footer-company-about">
-                     <span>About Us</span>
-                     <strong>Tsheryl's BnB</strong> Your home away from home. We are a place to first think of when you need a place to stay for a while in Pretoria.
-                 </p>
-                 <div class="footer-icons">
-                     <a href="https://www.facebook.com/Tsherylsbnb?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
-                 </div>
-             </div>
-         </footer>
-
-    <script src="site.js"></script>
-    <script src="dash.js"></script>
-    </body>
-    </html>
+<script src="site.js"></script>
+<script src="dash.js"></script>
+</body>
+</html>
